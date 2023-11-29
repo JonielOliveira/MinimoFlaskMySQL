@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Enviar Mensagem{% endblock %}
+
+{% block content %}
+<div>
+    <h3>Entrada de Dados:</h3>
+</div>
+
+<form method="POST" action="/enviar_mensagem">
+    <div>
+        <label for="fnome">Nome:</label>
+        <input class="form-control" type="text"  id="fnome" name="nome" placeholder="Nome" required>
+    </div>            
+    <div>
+        <label for="fapelido">Apelido:</label>
+        <input class="form-control" type="text"  id="fapelido" name="apelido" placeholder="Apelido" required>
+    </div>    
+    <div class="form-group">
+      <label for="femail">Seu e-mail:</label>
+      <input type="email" id="femail" name="email" class="form-control" placeholder="nome@exemplo.com" required>
+    </div>
+    <div class="form-group">
+      <label for="fcrush">Pet de interesse:</label>
+      <select class="form-control" id="fcrush" name="crush" required>
+        <option>Spike Lee</option>
+        <option>Luke Skywalker</option>
+        <option>Simba King</option>
+        <option>Robin Williams</option>
+        <option>Aurora Boreal</option>
+        <option>Katy Perry</option>
+        <option>Bebel Carrara</option>
+        <option>Lady Gaga</option>
+      </select>
+    </div>
+    <div>
+        <label for="fassunto">Assunto:</label>
+        <input class="form-control" type="text" id="fassunto" name="assunto" placeholder="Assunto" required>
+    </div>
+    <div class="form-group">
+      <label for="fmensagem">Mensagem:</label>
+      <textarea class="form-control" id="fmensagem" name="mensagem" rows="3"  required></textarea>
+    </div>
+
+    <div class="footer-form">
+
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">Enviar e-mail privado</label>
+        
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Enviar recado público</label>
+
+        </div>
+
+        <div class="col-auto">
+            <button id="botaoformulario" type="submit" class="btn btn-primary mb-2">Enviar</button>
+        </div>
+
+    </div>
+
+</form>
+
+{% endblock %}

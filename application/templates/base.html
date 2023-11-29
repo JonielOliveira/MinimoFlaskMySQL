@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- block title é uma chamada para um "target" do Flask.  -->
+    <!-- endblock indica o fim do bloco que foi chamado anteriormente -->
+    <title>{% block title %} {% endblock %}</title>
+    
+    <!-- Referência para o arquivo de folha de estilos (CSS) necessário para o funcionamento do Bootstrap -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+<body style="background-image: url('../static/img/background-home.png')">
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img class="icone-roxo" src="../static/img/icons/dog-solid.svg" alt="dog-solid"/>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <img class="icone-roxo" src="../static/img/icons/mars-solid.svg" alt="mars-solid"/>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <img class="icone-roxo" src="../static/img/icons/venus-solid.svg" alt="venus-solid"/>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Item 1</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Item 2</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{url_for('enviar_mensagem')}}">
+                  <img class="icone-roxo" src="../static/img/icons/paper-plane-solid.svg" alt="paper-plane-solid"/>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{url_for('enviar_mensagem')}}">Enviar Mensagem</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{url_for('ler_mensagens')}}">
+                  <img class="icone-roxo" src="../static/img/icons/email-solid.svg" alt="email-solid"/>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{url_for('ler_mensagens')}}">Ler Mensagens</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+
+    {% block content %} {% endblock %}
+
+
+    <!-- Rodapé da página -->
+    <footer>
+        <h3><br>&copy; 2023 - Todos os direitos reservados<br></h3>
+    </footer>
+
+    <!-- Referências para os arquivos (Javascript) necessários para o funcionamento do Bootstrap -->
+    <script src="../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+
+</body>
+</html>
